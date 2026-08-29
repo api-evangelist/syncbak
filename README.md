@@ -64,5 +64,9 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Syncbak is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Syncbak is a Marion, Iowa media-technology company founded in 2009 by Jack Perry that built the streaming infrastructure U.S. local television broadcasters use to carry their over-the-air signals online. Its MediaMogul / SimpleSync platform handles live-stream transcoding, cloud-based rights resolution and geo-location authentication, cloud DVR, content management, stream monitoring, clipping, and dynamic ad insertion via AdSync, delivering station feeds to OTT destinations including Paramount+, Hulu, fuboTV, Amazon, Roku, Apple TV and the NFL. The company rebranded to **Zeam Media** in May 2024, and syncbak.com now redirects to zeammedia.com.
+
+Syncbak / Zeam Media publishes no public developer program: no developer portal, API reference, OpenAPI or other machine-readable contract, SDK, GitHub organization, or MCP/A2A surface was found on 2026-08-29. See `x-coverage` in `apis.yml` for the probed evidence.
+
+- https://zeammedia.com/
+- https://zeam.com/

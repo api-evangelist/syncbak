@@ -1,8 +1,18 @@
 aid: syncbak
 name: Syncbak
-description: 'Syncbak is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Syncbak is a Marion, Iowa media-technology company founded in 2009 by Jack Perry that built the
+  streaming infrastructure local U.S. television broadcasters use to put their over-the-air signals
+  online. Its SimpleSync / MediaMogul platform handles live-stream transcoding, cloud-based rights
+  resolution and geo-location authentication, cloud DVR, device filtering, content management,
+  stream monitoring, clipping, and dynamic ad insertion through its AdSync product, delivering
+  station feeds to OTT destinations including Paramount+, Hulu, fuboTV, Amazon, Roku, Apple TV and
+  the NFL across 200+ U.S. markets. The company rebranded to Zeam Media in May 2024 to match its
+  Zeam consumer hyperlocal streaming app, and syncbak.com now redirects to zeammedia.com. Syncbak
+  publishes no public developer program, API reference, or machine-readable contract; its platform
+  is delivered to broadcasters and station groups under commercial agreement.
 url: https://raw.githubusercontent.com/api-evangelist/syncbak/refs/heads/main/apis.yml
+image: https://cdn.sanity.io/images/r7pd5g2i/production/5ce955d9ba99cc7e0dc069ca791c04e139bfe595-1200x630.jpg
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
@@ -12,6 +22,14 @@ created: '2026-08-29'
 modified: '2026-08-29'
 tags:
 - Company
+- Broadcasting
+- Streaming
+- Video
+- Media
+- OTT
+- Television
+- Advertising
+- Local News
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +37,46 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/syncbak-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://zeammedia.com/
+- type: TermsOfService
+  url: https://zeam.com/about/terms-of-use
+- type: PrivacyPolicy
+  url: https://zeam.com/about/privacypolicy
+- type: LinkedIn
+  url: https://www.linkedin.com/company/zeammedia/
+- type: LLMsTxt
+  url: llms/syncbak-llms.txt
+- type: Plans
+  url: plans/syncbak-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/syncbak-rate-limits.yml
+x-enrichment:
+  date: '2026-08-29'
+  status: minimal
+  artifacts_added: 6
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Syncbak rebranded to Zeam Media in May 2024 and every syncbak.com path now 301s to
+    zeammedia.com, whose entire navigation is About, Careers, News & Press and a Contact modal —
+    there is no developer section, no API reference, no GitHub organization, and api./developer./
+    docs. subdomains on syncbak.com, zeammedia.com and zeam.com do not resolve in DNS at all.
+  evidence:
+  - url: https://www.syncbak.com/
+    status: 301
+  - url: https://zeammedia.com/
+    status: 200
+  - url: https://zeammedia.com/openapi.json
+    status: 500
+  - url: https://zeam.com/openapi.json
+    status: 404
+  - url: https://zeam.com/.well-known/agent-card.json
+    status: 404
+  - url: https://api.github.com/orgs/syncbak
+    status: 404
+  checked: '2026-08-29'

@@ -1,0 +1,147 @@
+generated: '2026-08-29'
+method: probed
+source: >-
+  Direct unauthenticated GETs against every host Syncbak / Zeam Media resolves to, 2026-08-29.
+  Nothing was returned on any path, so no WellKnown or SecurityTxt pointer is emitted in apis.yml —
+  this file records a measured absence, not a served surface.
+summary:
+  documents_served: 0
+  hosts_probed: 3
+  note: >-
+    Every /.well-known/ path missed on all three hosts. zeammedia.com is a Next.js marketing site
+    whose catch-all route answers HTTP 500 with an HTML shell for any unmatched path, so its 500s are
+    a routing failure rather than a served document. zeam.com (the Zeam consumer streaming app)
+    returns clean 404s. www.syncbak.com 301s every path to https://zeammedia.com/. Candidate API
+    hosts api.syncbak.com, developer.syncbak.com, api.zeammedia.com, developer.zeammedia.com,
+    docs.zeammedia.com and api.zeam.com do not resolve in DNS at all.
+hosts:
+- host: zeammedia.com
+  note: Corporate site (Next.js). Unmatched routes return HTTP 500 with an HTML error shell.
+  documents:
+  - path: /.well-known/security.txt
+    status: 500
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 500
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 500
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 500
+    file: null
+  - path: /.well-known/api-catalog
+    status: 500
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 500
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 500
+    file: null
+  - path: /.well-known/agent.json
+    status: 500
+    file: null
+- host: zeam.com
+  note: Zeam consumer streaming application (ASP.NET). Clean 404s; robots.txt disallows /api/.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: www.syncbak.com
+  note: Legacy Syncbak host; HTTP 301 to https://zeammedia.com/ for every path.
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 301
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 301
+    file: null
+  - path: /.well-known/api-catalog
+    status: 301
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 301
+    file: null
+  - path: /.well-known/agent.json
+    status: 301
+    file: null
+contract_discovery:
+  note: >-
+    STEP 0b contract discovery, run against every host above plus every candidate api/docs/developer
+    subdomain. No OpenAPI, Swagger, GraphQL, MCP, AsyncAPI, Protobuf or WSDL surface was found.
+  probes:
+  - url: https://zeammedia.com/openapi.json
+    status: 500
+    result: HTML error shell, not a spec
+  - url: https://zeammedia.com/swagger.json
+    status: 500
+    result: HTML error shell, not a spec
+  - url: https://zeammedia.com/api-docs
+    status: 500
+    result: HTML error shell, not a spec
+  - url: https://zeam.com/openapi.json
+    status: 404
+    result: not found
+  - url: https://zeam.com/swagger.json
+    status: 404
+    result: not found
+  - url: https://zeam.com/api-docs
+    status: 404
+    result: not found
+  - url: https://api.syncbak.com/
+    status: null
+    result: NXDOMAIN — host does not resolve
+  - url: https://developer.syncbak.com/
+    status: null
+    result: NXDOMAIN — host does not resolve
+  - url: https://api.zeammedia.com/
+    status: null
+    result: NXDOMAIN — host does not resolve
+  - url: https://developer.zeammedia.com/
+    status: null
+    result: NXDOMAIN — host does not resolve
+  - url: https://docs.zeammedia.com/
+    status: null
+    result: NXDOMAIN — host does not resolve
+  - url: https://api.zeam.com/
+    status: null
+    result: NXDOMAIN — host does not resolve
+  - url: http://docs.syncbak.com/
+    status: 200
+    result: >-
+      Resolves to ghs.google.com and redirects to a Google Workspace sign-in for the syncbak.com
+      domain (Google Drive). An internal employee document store, not developer documentation.
+  - url: https://api.github.com/orgs/syncbak
+    status: 404
+    result: no GitHub organization; zeammedia and zeam-media also 404

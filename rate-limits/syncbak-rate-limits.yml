@@ -1,0 +1,18 @@
+generated: '2026-08-29'
+method: searched
+source: https://zeammedia.com/
+limit_count: 0
+note: >-
+  No rate limits are published because no public API is published. Syncbak / Zeam Media has no
+  developer portal, API reference or machine-readable contract, so there is no documented quota,
+  window, burst allowance, RateLimit-* / X-RateLimit-* response header, or 429 behaviour to record.
+  This is a measured zero.
+rate_limits: []
+headers: []
+evidence:
+- url: https://zeammedia.com/
+  status: 200
+  note: No developer or API section in the site.
+- url: https://zeam.com/robots.txt
+  status: 200
+  note: Disallows /api/ — an internal application path with no public documentation.

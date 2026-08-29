@@ -1,0 +1,43 @@
+generated: '2026-08-29'
+method: searched
+source: >-
+  npm registry search + registry.npmjs.org metadata, pypi.org/pypi/*/json, rubygems.org/api/v1,
+  crates.io/api/v1, and the company's own sites (zeammedia.com, zeam.com) — 2026-08-29.
+package_count: 0
+official_count: 0
+note: >-
+  Syncbak / Zeam Media publishes no first-party client library on any public registry, and has no
+  GitHub organization (syncbak, zeammedia and zeam-media all return 404 from api.github.com/orgs).
+  This is consistent with the rest of the profile: there is no public API for an SDK to wrap.
+packages: []
+rejected:
+- name: '@zeammoney/sdk'
+  registry: npm
+  reason: >-
+    Different company. Homepage sdk.zeam.app, described as the SDK for the "Zeam Platform API
+    Gateway" — a crypto/payments product unrelated to Zeam Media, the local-TV streaming company.
+    Name collision on "zeam" only.
+- name: '@zeam-labs/x402-mcp-bridge'
+  registry: npm
+  reason: >-
+    Different company. Zeam Labs, an x402/MCP payments project (mcp.zeamprism.com). No relationship
+    to Syncbak / Zeam Media.
+- name: syncbak-jsontoxml
+  registry: npm
+  version: 0.0.13
+  published: '2013-09-24'
+  reason: >-
+    Not first-party and not an SDK. Despite the syncbak- prefix, the registry metadata names
+    maintainer ken-franken and repository github.com/ken-franken/node-jsontoxml — it is a fork of a
+    generic JS-object-to-XML renderer, last published 2013, with no Syncbak ownership signal.
+registries_checked:
+- registry: npm
+  result: no first-party package
+- registry: pypi
+  result: 404 for syncbak and zeam
+- registry: rubygems
+  result: 404 for syncbak and zeam
+- registry: crates.io
+  result: 404 for syncbak and zeam
+- registry: github
+  result: no organization (syncbak / zeammedia / zeam-media all 404)

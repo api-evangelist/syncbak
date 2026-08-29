@@ -1,0 +1,19 @@
+generated: '2026-08-29'
+method: searched
+source: https://zeammedia.com/
+plan_count: 0
+note: >-
+  Syncbak / Zeam Media publishes no pricing page and no API plans of any kind. The corporate site
+  (zeammedia.com) has no pricing, packaging or "get started" surface — its navigation is About,
+  Careers, News & Press and a Contact modal — and the consumer Zeam app (zeam.com) is free,
+  ad-supported, with no paid tier. Broadcaster access to the MediaMogul / SimpleSync and AdSync
+  platforms is arranged commercially with station groups; no rate card is published. This is a
+  measured zero, not an unchecked field.
+plans: []
+evidence:
+- url: https://zeammedia.com/
+  status: 200
+  note: No pricing link anywhere in the site navigation or body copy.
+- url: https://zeam.com/
+  status: 200
+  note: Free ad-supported consumer app; no subscription or paid tier offered.
